@@ -8,14 +8,14 @@ let userEntries = retrieveEntriesArray();
 const displayEntries = () => {
   const entries = retrieveEntriesArray();
 
-  const tableEntriesOutput = entries
+  const tableEntries = entries
     .map(
-      (eachEntry) => `<tr>
-              <td style = "padding: 2px 4px;text-align:center">${eachEntry.name}</td>
-              <td style = "padding: 2px 4px;text-align:center">${eachEntry.email}</td>
-              <td style = "padding: 2px 4px;text-align:center">${eachEntry.password}</td>
-              <td style = "padding: 2px 4px;text-align:center">${eachEntry.dob}</td>
-              <td style = "padding: 2px 4px;text-align:center">${eachEntry.acceptedTermsAndConditions}</td>
+      (entry) => `<tr>
+              <td style = "padding: 2px 4px;text-align:center">${entry.name}</td>
+              <td style = "padding: 2px 4px;text-align:center">${entry.email}</td>
+              <td style = "padding: 2px 4px;text-align:center">${entry.password}</td>
+              <td style = "padding: 2px 4px;text-align:center">${entry.dob}</td>
+              <td style = "padding: 2px 4px;text-align:center">${entry.acceptedTermsAndConditions}</td>
           </tr>`
     )
     .join("\n");
@@ -30,7 +30,7 @@ const displayEntries = () => {
               <th style = "padding: 2px 10px">ACCEPTED TERM?</th>
           </tr>
       </thead>
-      <tbody>${tableEntriesOutput}</tbody>
+      <tbody>${tableEntries}</tbody>
   </table>`;
 
   let details = document.getElementById("user-entries");
